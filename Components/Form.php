@@ -31,7 +31,10 @@ class Form {
     }
 
     /**
-     * returns the value of the input by $name
+     * Returns the value of the input by $name
+     *
+     * @param string $name
+     * @return string
      */
     public function getValue(string $name): string
     {
