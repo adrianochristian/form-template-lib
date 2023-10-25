@@ -6,3 +6,6 @@ https://github.com/adrianochristian/form-template-lib/assets/30845912/708ce0f9-f
 
 (if any problem happens with the video, there's also a youtube alternative: https://www.youtube.com/watch?v=ED1iLibSrzA )
 
+I took the liberty to add a few things while creating the solution, like a MainPage layout and the Button as a Input.
+
+
