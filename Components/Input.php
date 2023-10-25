@@ -4,10 +4,10 @@ abstract class Input {
     abstract protected function _renderSetting();
 
     public function __construct(
-        protected $_name, 
+        public $_name, 
         protected $_type, 
         protected $_label = null, 
-        protected $_value = null,
+        public $_value = null,
     ) {}
 
     /**
@@ -26,13 +26,8 @@ abstract class Input {
      */
     public function render(): string
     {
-        return '<label for="' . $this->_name . '">' . $this->_label .
-            '</label><br>' .
-            '<input type="' . $this->_type . 
-            '" id="' . $this->_name . 
-            '" name="' . $this->_name . 
-            '" value="' . $this->_value . 
-            '" >';
+        return '<label for="' . $this->_name . '">' . $this->_label .' </label>' .
+            $this->_renderSetting();
     }
 
     /**

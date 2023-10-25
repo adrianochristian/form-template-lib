@@ -1,5 +1,5 @@
 <?php
-require "../Components/Form.php";
+require_once "../Components/Form.php";
 
 class MainPage {
 
@@ -7,6 +7,17 @@ class MainPage {
 
     public function render(): string
     {
-        return '<div class="container">' . $this->form->display() . '</div>';
+        $page = '<html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Main</title>
+                    </head>
+                    <body>';
+        $page .= '<div class="container">' . $this->form->display() . '</div>';
+        $page .= '</body>
+                </html>';
+
+        return $page;
     }
 }

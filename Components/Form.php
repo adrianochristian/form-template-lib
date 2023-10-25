@@ -26,6 +26,8 @@ class Form {
                 return false;
             }
         }
+
+        return true;
     }
 
     /**
@@ -33,11 +35,13 @@ class Form {
      */
     public function getValue(string $name): string
     {
-        $search = array_search($name, $this->_inputs);
+        foreach ($this->_inputs as $input) {
+            if ($name === $input->_name){
+                return $input->_value;
+            }
+        }
 
-        var_dump($search);
-
-        return $search;
+        return 'ue';
     }
 
     /**
