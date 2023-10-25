@@ -1,37 +1,60 @@
 <?php
 class Form {
 
-    protected $_inputs;
+    public function __construct(protected array $_inputs = []) {}
 
-    public function __construct() {
-        // TODO
+    /**
+     * Adds an input instance to the collection of inputs managed by this form object
+     *
+     * @param Input $input 
+     * @return void
+     */
+    public function addInput(Input $input): void
+    {
+        $this->_inputs[] = $input;
     }
 
     /**
-     *  adds an input instance to the collection of inputs managed by this form object
+     * Iterates over all inputs managed by this form and returns false if any of them don't validate
+     *
+     * @return boolean
      */
-    public function addInput(Input $input) {
-        // TODO
-    }
-
-    /**
-     *  iterates over all inputs managed by this form and returns false if any of them don't validate
-     */
-    public function validate() {
-        // TODO
+    public function validate(): bool
+    {
+        foreach ($this->_inputs as $input) {
+            if (!$input->validate()){
+                return false;
+            }
+        }
     }
 
     /**
      * returns the value of the input by $name
      */
-    public function getValue($name) {
-        // TODO
+    public function getValue(string $name): string
+    {
+        $search = array_search($name, $this->_inputs);
+
+        var_dump($search);
+
+        return $search;
     }
 
     /**
-     *  draws the outer form element, and the markup for each input, one input per row
+     * Draws the outer form element, and the markup for each input, one input per row
+     *
+     * @return string
      */
-    public function display() {
-        // TODO
+    public function display(): string
+    {
+        $form = '<form action="' . $_SERVER['PHP_SELF'] . '" method="POST" class="form-container">';
+        
+        foreach ($this->_inputs as $input) {
+            $form .= $input->render();
+        }
+        
+        $form .= '</form>';
+        
+        return $form;
     }
 }
