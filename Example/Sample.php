@@ -12,11 +12,13 @@ $form->addInput(new Button('Submit'));
 $page = new MainPage($form);
 
 if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD']=="POST") {
-    if ($form->validate()) {
-        $firstName = $form->getValue("firstname");
-        $lastName = $form->getValue("lastname");
-        echo $firstName." ".$lastName;
+    if (!$form->validate()) {
+        echo "Check the data and try again </br>";
     }
+
+    $firstName = $form->getValue("firstname");
+    $lastName = $form->getValue("lastname");
+    echo $firstName." ".$lastName;
 }
 
 echo $page->render();
