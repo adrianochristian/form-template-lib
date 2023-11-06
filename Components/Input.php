@@ -26,7 +26,7 @@ abstract class Input {
      */
     public function render(): string
     {
-        return '<label for="' . $this->_name . '">' . $this->_label .' </label>' .
+        return '<div class="row"><label class="column" for="' . $this->_name . '">' . $this->_label .' </label>' .
             $this->_renderSetting();
     }
 

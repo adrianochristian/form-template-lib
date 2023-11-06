@@ -9,10 +9,10 @@ class Button extends Input {
 
     public function _renderSetting(): string
     {
-        return '<button type="' . $this->_type . 
+        return '<button class="column" type="' . $this->_type . 
             '" id="' . $this->_name . 
             '" name="' . $this->_name . 
-            '" >' . $this->_value .'</button><br>';
+            '" ><a>' . $this->_value .'</a></button><br></div>';
     }
 
     public function validate(): bool

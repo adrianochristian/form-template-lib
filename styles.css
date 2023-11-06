@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-bottom: 5px;
+}
+  
+.column {
+    display: flex;
+    flex-direction: column;
+    margin-right: 3px;
+    min-width: 100px;
+}
+
+button {
+    border-radius: 10px;
+    background-color: #9cde9c;
+    border: 0.5px #808080 solid;
+    min-width: auto !important;
+}
+
+button a{
+    color: #fff;
+    font-weight: bold;
+}
+
+label {
+    background-color: #9cde9c;
+}
+
+
+
+form {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    border: 1px solid #008000;
+    border-radius: 10px;
+    padding: 5px;
+}

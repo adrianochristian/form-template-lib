@@ -9,11 +9,11 @@ class TextInput extends Input {
 
     public function _renderSetting(): string
     {
-        return '<input type="' . $this->_type . 
+        return '<input class="column" type="' . $this->_type . 
             '" id="' . $this->_name . 
             '" name="' . $this->_name . 
             '" value="' . $this->_value . 
-            '" ><br>';
+            '" ><br></div>';
     }
 
     public function validate()

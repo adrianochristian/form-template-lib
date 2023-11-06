@@ -12,6 +12,8 @@ class MainPage {
                         <meta charset="UTF-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <title>Main</title>
+
+                        <link rel="stylesheet" href="../styles.css">
                     </head>
                     <body>';
         $page .= '<div class="container">' . $this->form->display() . '</div>';
